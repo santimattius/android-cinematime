@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">CinemaTime</string>
     <string name="base_url">https://api.themoviedb.org</string>
-    <string name="tag_text_movie">Pelicula</string>
-    <string name="tag_text_tv">Serie</string>
+    <string name="tag_text_movie">Movie</string>
+    <string name="tag_text_tv">TvShow</string>
 </resources>
