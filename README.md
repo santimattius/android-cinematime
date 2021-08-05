@@ -33,6 +33,8 @@ Implementing clean architecture in android and using some of the new ConcatAdapt
 
 Below you will find the libraries used to build the template and according to my criteria the most used in android development so far.
 
+- **Android Architecture Component**:
+  - https://developer.android.com/topic/libraries/architecture  
 - **Koin** - dependencie provider: 
   - https://insert-koin.io/
 - **Retrofit** - networking: 
@@ -43,5 +45,3 @@ Below you will find the libraries used to build the template and according to my
   - https://github.com/bumptech/glide
 - **Kotlin coroutines**
   - https://kotlinlang.org/docs/reference/coroutines-overview.html
-- **Mockk**, testing library
-  - https://mockk.io/  
