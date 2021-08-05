@@ -7,17 +7,19 @@ import com.santiago.cinematime.data.data.database.RoomDataSource
 import com.santiago.cinematime.data.data.location.PlayServicesLocationDataSource
 import com.santiago.cinematime.data.data.server.TheMovieDbClient
 import com.santiago.cinematime.data.data.server.TheMovieDbDataSource
-import com.santiago.cinematime.data.repository.MoviesRepository
+import com.santiago.cinematime.data.datasources.LocalDataSource
+import com.santiago.cinematime.data.datasources.LocationDataSource
+import com.santiago.cinematime.data.datasources.RemoteDataSource
 import com.santiago.cinematime.data.repository.PermissionChecker
 import com.santiago.cinematime.data.repository.RegionRepository
-import com.santiago.cinematime.data.repository.TvRepository
-import com.santiago.cinematime.data.source.LocalDataSource
-import com.santiago.cinematime.data.source.LocationDataSource
-import com.santiago.cinematime.data.source.RemoteDataSource
+import com.santiago.cinematime.data.repository.TheMovieDbTvShowRepository
+import com.santiago.cinematime.data.repository.TheMoviesDbRepository
+import com.santiago.cinematime.domain.repositories.MoviesRepository
+import com.santiago.cinematime.domain.repositories.TvShowsRepository
+import com.santiago.cinematime.domain.usecases.GetPopularMovies
+import com.santiago.cinematime.domain.usecases.GetPopularTvShows
 import com.santiago.cinematime.ui.MainActivity
 import com.santiago.cinematime.ui.MainViewModel
-import com.santiago.cinematime.usecases.GetPopularMovies
-import com.santiago.cinematime.usecases.GetPopularTvShows
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import org.koin.android.ext.koin.androidApplication
@@ -55,8 +57,8 @@ private val appModule = module {
 
 val dataModule = module {
     factory { RegionRepository(get(), get()) }
-    factory { MoviesRepository(get(), get(), get()) }
-    factory { TvRepository(get(), get(), get()) }
+    factory<MoviesRepository> { TheMoviesDbRepository(get(), get(), get()) }
+    factory<TvShowsRepository> { TheMovieDbTvShowRepository(get(), get()) }
 }
 
 private val scopesModule = module {

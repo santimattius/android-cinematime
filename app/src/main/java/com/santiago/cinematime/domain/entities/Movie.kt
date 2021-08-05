@@ -1,4 +1,4 @@
-package com.santiago.cinematime.domain
+package com.santiago.cinematime.domain.entities
 
 data class Movie(
     val id: Int,

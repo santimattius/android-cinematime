@@ -1,8 +1,8 @@
 package com.santiago.cinematime.data.data
 
 import com.santiago.cinematime.data.data.database.movie.MovieEntity
-import com.santiago.cinematime.domain.Movie
-import com.santiago.cinematime.domain.Tv
+import com.santiago.cinematime.domain.entities.Movie
+import com.santiago.cinematime.domain.entities.Tv
 import com.santiago.cinematime.data.data.server.movie.Movie as ServerMovie
 import com.santiago.cinematime.data.data.server.tv.Tv as ServerTv
 

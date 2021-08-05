@@ -13,10 +13,9 @@ import com.santiago.cinematime.common.PermissionRequester
 import com.santiago.cinematime.databinding.ActivityMainBinding
 import com.santiago.cinematime.ui.adapter.MovieAdapter
 import com.santiago.cinematime.ui.adapter.TvAdapter
-import com.santiago.cinematime.ui.base.ItemViewHolder
+import com.santiago.cinematime.ui.adapter.holder.ItemViewHolder
 import org.koin.androidx.scope.lifecycleScope
 import org.koin.androidx.viewmodel.scope.viewModel
-import timber.log.Timber
 
 
 class MainActivity : AppCompatActivity() {
@@ -56,7 +55,6 @@ class MainActivity : AppCompatActivity() {
         val gridLayoutManager = GridLayoutManager(listItem.context, SPAN_COUNT)
         gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
-                Timber.d("Type ${principalAdapter.getItemViewType(position)}")
                 return ITEM_SPAN_SIZE
             }
         }
@@ -67,7 +65,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateUi(state: MainState) {
-
         when (state) {
             is MainState.Movies -> moviesAdapter.submitList(state.movies)
             is MainState.TvShows -> tvAdapter.submitList(state.tvShows)

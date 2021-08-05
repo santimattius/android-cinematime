@@ -1,6 +1,6 @@
-package com.santiago.cinematime.data.source
+package com.santiago.cinematime.data.datasources
 
-import com.santiago.cinematime.domain.Movie
+import com.santiago.cinematime.domain.entities.Movie
 
 interface LocalDataSource {
     suspend fun isEmpty(): Boolean

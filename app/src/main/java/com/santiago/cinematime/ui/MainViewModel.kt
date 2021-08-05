@@ -4,11 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.santiago.cinematime.domain.usecases.GetPopularMovies
+import com.santiago.cinematime.domain.usecases.GetPopularTvShows
 import com.santiago.cinematime.ui.model.ContentUiModel
-import com.santiago.cinematime.ui.model.MovieUiModel
-import com.santiago.cinematime.ui.model.TvUiModel
-import com.santiago.cinematime.usecases.GetPopularMovies
-import com.santiago.cinematime.usecases.GetPopularTvShows
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -32,11 +30,11 @@ class MainViewModel(
     fun onCoarsePermissionRequested() {
         viewModelScope.launch {
             emit(MainState.Loading)
-            val movies = async { getPopularMovies.invoke().asMovieUiCollection() }
-            val tvShows = async { getPopularTvShows.invoke().asTvUiCollection() }
+            val movies = async { getPopularMovies().asMovieUiCollection() }
+            val tvShows = async { getPopularTvShows().asTvUiCollection() }
             emit(MainState.Movies(movies.await()))
             emit(MainState.TvShows(tvShows.await()))
-            delay(1000)
+            delay(DELAY)
             emit(MainState.Complete)
         }
     }
@@ -49,13 +47,7 @@ class MainViewModel(
         emit(MainState.Navigation(content))
     }
 
-}
-
-sealed class MainState {
-    object Loading : MainState()
-    object Complete : MainState()
-    data class Movies(val movies: List<MovieUiModel>) : MainState()
-    data class TvShows(val tvShows: List<TvUiModel>) : MainState()
-    data class Navigation(val content: ContentUiModel) : MainState()
-    object RequestLocationPermission : MainState()
+    companion object {
+        private const val DELAY = 1_000L
+    }
 }

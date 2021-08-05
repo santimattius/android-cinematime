@@ -1,7 +1,7 @@
-package com.santiago.cinematime.data.source
+package com.santiago.cinematime.data.datasources
 
-import com.santiago.cinematime.domain.Movie
-import com.santiago.cinematime.domain.Tv
+import com.santiago.cinematime.domain.entities.Movie
+import com.santiago.cinematime.domain.entities.Tv
 
 interface RemoteDataSource {
 

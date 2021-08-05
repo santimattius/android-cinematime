@@ -3,9 +3,9 @@ package com.santiago.cinematime.data.data.server
 import com.santiago.cinematime.data.data.asDomainModel
 import com.santiago.cinematime.data.data.server.movie.MoviesService
 import com.santiago.cinematime.data.data.server.tv.TvService
-import com.santiago.cinematime.data.source.RemoteDataSource
-import com.santiago.cinematime.domain.Movie
-import com.santiago.cinematime.domain.Tv
+import com.santiago.cinematime.data.datasources.RemoteDataSource
+import com.santiago.cinematime.domain.entities.Movie
+import com.santiago.cinematime.domain.entities.Tv
 
 class TheMovieDbDataSource(private val client: TheMovieDbClient) : RemoteDataSource {
 

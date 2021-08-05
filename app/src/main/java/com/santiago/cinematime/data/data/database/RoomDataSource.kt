@@ -2,8 +2,8 @@ package com.santiago.cinematime.data.data.database
 
 import com.santiago.cinematime.data.data.asDomainModel
 import com.santiago.cinematime.data.data.asDatabaseModel
-import com.santiago.cinematime.data.source.LocalDataSource
-import com.santiago.cinematime.domain.Movie
+import com.santiago.cinematime.data.datasources.LocalDataSource
+import com.santiago.cinematime.domain.entities.Movie
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

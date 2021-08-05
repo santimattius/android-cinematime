@@ -1,6 +1,6 @@
 package com.santiago.cinematime.data.repository
 
-import com.santiago.cinematime.data.source.LocationDataSource
+import com.santiago.cinematime.data.datasources.LocationDataSource
 
 class RegionRepository(
     private val locationDataSource: LocationDataSource,

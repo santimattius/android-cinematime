@@ -1,4 +1,4 @@
-package com.santiago.cinematime.ui.base
+package com.santiago.cinematime.ui.adapter.holder
 
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView

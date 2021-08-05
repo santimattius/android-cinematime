@@ -4,7 +4,6 @@ import android.view.ViewGroup
 import com.santiago.cinematime.common.inflater
 import com.santiago.cinematime.databinding.ItemMovieBinding
 import com.santiago.cinematime.ui.model.MovieUiModel
-import com.santiago.cinematime.ui.base.ItemViewHolder
 
 class MovieViewHolder(binding: ItemMovieBinding) :
     ItemViewHolder<MovieUiModel, ItemMovieBinding>(binding) {

@@ -1,20 +1,19 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-apply plugin: "androidx.navigation.safeargs"
 apply plugin: 'kotlin-android-extensions'
 
 def localProperties = new Properties()
 localProperties.load(new FileInputStream(rootProject.file("local.properties")))
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.santiago.cinematime"
         minSdkVersion 16
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -47,12 +46,7 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$version_appcompat"
     implementation "androidx.fragment:fragment-ktx:$version_fragment"
     implementation "androidx.constraintlayout:constraintlayout:$version_constraint_layout"
-    implementation "androidx.recyclerview:recyclerview:${version_recycler_view}"
-
-
-    // Navigation
-    implementation "android.arch.navigation:navigation-fragment-ktx:$version_navigation"
-    implementation "android.arch.navigation:navigation-ui-ktx:$version_navigation"
+    implementation "androidx.recyclerview:recyclerview:$version_recycler_view"
 
     // Coroutines for getting off the UI thread
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version_kotlin_coroutines"
@@ -72,7 +66,7 @@ dependencies {
 
     // ViewModel and LiveData (arch components)
     implementation "androidx.lifecycle:lifecycle-extensions:$version_lifecycle_extensions"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$version_lifecycle_extensions"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$version_lifecycle_viewmodel_ktx"
 
     // Logging
     implementation "com.jakewharton.timber:timber:$version_timber"
@@ -85,14 +79,8 @@ dependencies {
     implementation "androidx.legacy:legacy-support-v4:$version_legacy_support"
     kapt "androidx.room:room-compiler:$version_room"
 
-    // WorkManager
-    implementation "android.arch.work:work-runtime-ktx:$version_work"
-
-    //Paging
-    implementation "androidx.paging:paging-runtime-ktx:$version_paging"
-
-    implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'com.google.android.gms:play-services-location:17.1.0'
+    implementation "androidx.multidex:multidex:$version_multidex"
+    implementation "com.google.android.gms:play-services-location:$version_play_service_location"
 
     //koin
     // Koin for Android

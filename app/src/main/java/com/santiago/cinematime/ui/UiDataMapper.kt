@@ -2,8 +2,8 @@ package com.santiago.cinematime.ui
 
 import com.santiago.cinematime.ui.model.MovieUiModel
 import com.santiago.cinematime.ui.model.TvUiModel
-import com.santiago.cinematime.domain.Movie as MovieDomain
-import com.santiago.cinematime.domain.Tv as TvDomain
+import com.santiago.cinematime.domain.entities.Movie as MovieDomain
+import com.santiago.cinematime.domain.entities.Tv as TvDomain
 
 fun MovieDomain.asUiModel() =
     MovieUiModel(id, title, posterPath, favorite)

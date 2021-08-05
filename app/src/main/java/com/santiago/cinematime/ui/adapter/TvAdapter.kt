@@ -6,7 +6,7 @@ import com.santiago.cinematime.R
 import com.santiago.cinematime.ui.adapter.diff.DiffItemTv
 import com.santiago.cinematime.ui.adapter.holder.TvViewHolder
 import com.santiago.cinematime.ui.model.TvUiModel
-import com.santiago.cinematime.ui.base.ItemViewHolder as Item
+import com.santiago.cinematime.ui.adapter.holder.ItemViewHolder as Item
 
 class TvAdapter(private val callback: Item.ItemClick<TvUiModel>): ListAdapter<TvUiModel, TvViewHolder>(
     DiffItemTv
